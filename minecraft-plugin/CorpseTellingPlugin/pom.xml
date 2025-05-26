@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>CorpseTellingMaven</groupId>
+  <artifactId>CorpseTellingMaven</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+  </properties>
+  <dependencies>
+        <!-- Dependencia de Spark -->
+        <dependency>
+            <groupId>com.sparkjava</groupId>
+            <artifactId>spark-core</artifactId>
+            <version>2.9.4</version>
+        </dependency>
+
+        <!-- Dependencia de Spigot API -->
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.21.5-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <!-- Dependencia MongoDB -->
+        <dependency>
+    		<groupId>org.mongodb</groupId>
+    		<artifactId>mongodb-driver-sync</artifactId>
+    		<version>5.5.0</version>
+		</dependency>
+        
+        <!-- Dependencia Json -->
+        <dependency>
+    		<groupId>com.google.code.gson</groupId>
+    		<artifactId>gson</artifactId>
+    		<version>2.13.1</version>
+		</dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <!-- Plugin para crear un Fat JAR -->
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.6.0</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>org.corpse.telling.death.Main</mainClass> <!-- Reemplaza con tu clase principal -->
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">CorpseTellingApp</string>
+    <string name="title_home">Accueil</string>
+    <string name="title_dashboard">Tableau de bord</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="hello_blank_fragment">Bonjour fragment vide</string>
+
+    <string name="command_hint">Commande</string>
+    <string name="send_command_button">Envoyer la commande</string>
+
+    <string name="hint_server_ip">IP du serveur</string>
+    <string name="button_assign_server_ip">Attribuer l’IP du serveur</string>
+
+    <string name="difficulty">Difficulté</string>
+    <string name="peaceful">Paisible</string>
+    <string name="easy">Facile</string>
+    <string name="normal">Normal</string>
+    <string name="hard">Difficile</string>
+
+    <string name="weather">Météo</string>
+    <string name="clear">Dégagé</string>
+    <string name="rain">Pluie</string>
+    <string name="storm">Orage</string>
+
+    <string name="time">Temps</string>
+    <string name="day">Jour</string>
+    <string name="noon">Midi</string>
+    <string name="night">Nuit</string>
+    <string name="midnight">Minuit</string>
+
+    <string name="command_player">joueur</string>
+    <string name="command_sheep_lol">Mouton LOL</string>
+    <string name="command_lore">Pas besoin de dire où ça a été</string>
+
+    <string name="error_no_server_ip">Aucune IP de serveur enregistrée</string>
+    <string name="command_sent_successfully">Commande envoyée avec succès : %1$s</string>
+    <string name="error_request_code">Erreur de requête : Code %1$d</string>
+    <string name="error_exception">ERREUR : %1$s</string>
+
+    <string name="prompt_enter_server_ip">Veuillez entrer l’IP du serveur</string>
+    <string name="server_ip_saved">IP du serveur enregistrée : %1$s</string>
+
+    <string name="action_ban">Bannir</string>
+    <string name="action_kick">Expulser</string>
+    <string name="action_kill">Tuer</string>
+    <string name="actions_for_player">Actions pour %1$s</string>
+    <string name="cancel">Annuler</string>
+
+    <string name="difficulty_peaceful">Paisible</string>
+    <string name="difficulty_easy">Facile</string>
+    <string name="difficulty_normal">Normal</string>
+    <string name="difficulty_hard">Difficile</string>
+
+    <string name="weather_clear">Dégagé</string>
+    <string name="weather_rain">Pluie</string>
+    <string name="weather_storm">Orage</string>
+
+    <string name="time_day">Jour</string>
+    <string name="time_noon">Midi</string>
+    <string name="time_night">Nuit</string>
+    <string name="time_midnight">Minuit</string>
+</resources>

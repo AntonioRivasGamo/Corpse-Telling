@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_ip">
+
+    <fragment
+        android:id="@+id/navigation_ip"
+        android:name="com.example.corpsetellingapp.ui.IpAsignFragment"
+        android:label="IP Asign"
+        tools:layout="@layout/fragment_ip_asign" />
+
+    <fragment
+        android:id="@+id/navigation_players"
+        android:name="com.example.corpsetellingapp.ui.PlayersFragment"
+        android:label="Players"
+        tools:layout="@layout/fragment_players" />
+
+    <fragment
+        android:id="@+id/navigation_commands"
+        android:name="com.example.corpsetellingapp.ui.CommandsFragment"
+        android:label="Commands"
+        tools:layout="@layout/fragment_commands" />
+
+    <fragment
+        android:id="@+id/navigation_world"
+        android:name="com.example.corpsetellingapp.ui.WorldFragment"
+        android:label="World"
+        tools:layout="@layout/fragment_world" />
+</navigation>

@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">CorpseTellingApp</string>
+    <string name="title_home">Inicio</string>
+    <string name="title_dashboard">Panel</string>
+    <string name="title_notifications">Notificaciones</string>
+    <string name="hello_blank_fragment">Hola fragmento vacío</string>
+
+    <string name="command_hint">Comando</string>
+    <string name="send_command_button">Enviar Comando</string>
+
+    <string name="hint_server_ip">IP del servidor</string>
+    <string name="button_assign_server_ip">Asignar IP del servidor</string>
+
+    <string name="difficulty">Dificultad</string>
+    <string name="peaceful">Pacífico</string>
+    <string name="easy">Fácil</string>
+    <string name="normal">Normal</string>
+    <string name="hard">Difícil</string>
+
+    <string name="weather">Clima</string>
+    <string name="clear">Despejado</string>
+    <string name="rain">Lluvia</string>
+    <string name="storm">Tormenta</string>
+
+    <string name="time">Hora</string>
+    <string name="day">Día</string>
+    <string name="noon">Mediodía</string>
+    <string name="night">Noche</string>
+    <string name="midnight">Medianoche</string>
+
+    <string name="command_player">jugador</string>
+    <string name="command_sheep_lol">Oveja LOL</string>
+    <string name="command_lore">No hace falta decir por dónde ha estado</string>
+
+    <string name="error_no_server_ip">No hay IP del servidor guardada</string>
+    <string name="command_sent_successfully">Comando enviado con éxito: %1$s</string>
+    <string name="error_request_code">Error en la petición: Código %1$d</string>
+    <string name="error_exception">ERROR: %1$s</string>
+
+    <string name="prompt_enter_server_ip">Introduce la IP del servidor</string>
+    <string name="server_ip_saved">IP del servidor guardada: %1$s</string>
+
+    <string name="action_ban">Banear</string>
+    <string name="action_kick">Expulsar</string>
+    <string name="action_kill">Matar</string>
+    <string name="actions_for_player">Acciones para %1$s</string>
+    <string name="cancel">Cancelar</string>
+
+    <string name="difficulty_peaceful">Pacífico</string>
+    <string name="difficulty_easy">Fácil</string>
+    <string name="difficulty_normal">Normal</string>
+    <string name="difficulty_hard">Difícil</string>
+
+    <string name="weather_clear">Despejado</string>
+    <string name="weather_rain">Lluvia</string>
+    <string name="weather_storm">Tormenta</string>
+
+    <string name="time_day">Día</string>
+    <string name="time_noon">Mediodía</string>
+    <string name="time_night">Noche</string>
+    <string name="time_midnight">Medianoche</string>
+</resources>

@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_ip"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="IP Asign"/>
+    <item
+        android:id="@+id/navigation_players"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="Players"/>
+    <item
+        android:id="@+id/navigation_commands"
+        android:icon="@drawable/ic_baseline_terminal_24"
+        android:title="Commands"/>
+    <item
+        android:id="@+id/navigation_world"
+        android:icon="@drawable/ic_baseline_language_24"
+        android:title="World"/>
+</menu>

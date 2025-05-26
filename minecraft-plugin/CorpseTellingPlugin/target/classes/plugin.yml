@@ -1,0 +1,22 @@
+name: CorpseTelling
+version: 1.0
+main: org.corpse.telling.death.MainQuija
+api-version: 1.21
+
+commands:
+  setMongo:
+    description: Sets the parameters of the MongoDB database
+    usage: /setMongo <user> <password> <host> <database name> <collection>
+    permission: CorpseTelling.setmongo
+  getMongo:
+    description: Gets current IP address of the MongoDB database
+    usage: /getMongo
+    permission: CorpseTelling.getmongo
+
+permissions:
+  CorpseTelling.setmongo:
+    description: Can change database
+    default: op
+  CorpseTelling.getmongo:
+    description: Can see database URL
+    default: op

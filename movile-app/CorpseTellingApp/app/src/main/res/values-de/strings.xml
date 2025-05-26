@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">CorpseTellingApp</string>
+    <string name="title_home">Startseite</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Benachrichtigungen</string>
+    <string name="hello_blank_fragment">Hallo leerer Fragment</string>
+
+    <string name="command_hint">Befehl</string>
+    <string name="send_command_button">Befehl senden</string>
+
+    <string name="hint_server_ip">Server-IP</string>
+    <string name="button_assign_server_ip">Server-IP zuweisen</string>
+
+    <string name="difficulty">Schwierigkeitsgrad</string>
+    <string name="peaceful">Friedlich</string>
+    <string name="easy">Einfach</string>
+    <string name="normal">Normal</string>
+    <string name="hard">Schwer</string>
+
+    <string name="weather">Wetter</string>
+    <string name="clear">Klar</string>
+    <string name="rain">Regen</string>
+    <string name="storm">Sturm</string>
+
+    <string name="time">Zeit</string>
+    <string name="day">Tag</string>
+    <string name="noon">Mittag</string>
+    <string name="night">Nacht</string>
+    <string name="midnight">Mitternacht</string>
+
+    <string name="command_player">Spieler</string>
+    <string name="command_sheep_lol">Schaf LOL</string>
+    <string name="command_lore">Man muss nicht sagen, wo es gewesen ist</string>
+
+    <string name="error_no_server_ip">Keine Server-IP gespeichert</string>
+    <string name="command_sent_successfully">Befehl erfolgreich gesendet: %1$s</string>
+    <string name="error_request_code">Fehler bei der Anfrage: Code %1$d</string>
+    <string name="error_exception">FEHLER: %1$s</string>
+
+    <string name="prompt_enter_server_ip">Bitte geben Sie die Server-IP ein</string>
+    <string name="server_ip_saved">Server-IP gespeichert: %1$s</string>
+
+    <string name="action_ban">Sperren</string>
+    <string name="action_kick">Kicken</string>
+    <string name="action_kill">Töten</string>
+    <string name="actions_for_player">Aktionen für %1$s</string>
+    <string name="cancel">Abbrechen</string>
+
+    <string name="difficulty_peaceful">Friedlich</string>
+    <string name="difficulty_easy">Einfach</string>
+    <string name="difficulty_normal">Normal</string>
+    <string name="difficulty_hard">Schwer</string>
+
+    <string name="weather_clear">Klar</string>
+    <string name="weather_rain">Regen</string>
+    <string name="weather_storm">Sturm</string>
+
+    <string name="time_day">Tag</string>
+    <string name="time_noon">Mittag</string>
+    <string name="time_night">Nacht</string>
+    <string name="time_midnight">Mitternacht</string>
+</resources>
