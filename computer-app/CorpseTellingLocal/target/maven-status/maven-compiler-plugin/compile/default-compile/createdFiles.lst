@@ -1,9 +1,6 @@
 org\corpse\telling\death\CorpseAutopsy$9.class
 org\corpse\telling\death\utils\HttpPetition$1.class
-org\corpse\telling\death\CorpseAutopsy$3.class
 org\corpse\telling\death\CorpseAutopsy$16.class
-org\corpse\telling\death\CorpseAutopsy$8.class
-org\corpse\telling\death\CorpseAutopsy$17.class
 org\corpse\telling\death\CorpseAutopsy$2.class
 org\corpse\telling\death\CorpseAutopsy$7.class
 org\corpse\telling\death\CorpseAutopsy$6.class
@@ -11,11 +8,15 @@ org\corpse\telling\death\CorpseAutopsy$12.class
 org\corpse\telling\death\CorpseAutopsy$13.class
 org\corpse\telling\death\CorpseAutopsy$18.class
 org\corpse\telling\death\utils\HttpPetition.class
-org\corpse\telling\death\CorpseAutopsy$11.class
-org\corpse\telling\death\CorpseAutopsy$14.class
 org\corpse\telling\death\CorpseAutopsy.class
 org\corpse\telling\death\CorpseAutopsy$1.class
 org\corpse\telling\death\CorpseAutopsy$4.class
 org\corpse\telling\death\CorpseAutopsy$10.class
 org\corpse\telling\death\CorpseAutopsy$15.class
+org\corpse\telling\death\CorpseAutopsy$3.class
+org\corpse\telling\death\CorpseAutopsy$8.class
+org\corpse\telling\death\CorpseAutopsy$17.class
+org\corpse\telling\death\CorpseAutopsy$11.class
+org\corpse\telling\death\CorpseAutopsy$14.class
 org\corpse\telling\death\CorpseAutopsy$5.class
+org\corpse\telling\death\CorpseAutopsy$19.class

@@ -74,7 +74,7 @@ public class HttpPetition {
             return answer.toString();
 
         } catch (IOException e) {
-            return "ERROR";
+            return "ERROR: " + "http://" + ip + "/ping";
         }
     }
 	
@@ -83,7 +83,7 @@ public class HttpPetition {
         	Properties p = new Properties();
         	p.load(new FileInputStream(new File("config/conf.properties")));
         	String ip = Files.readString(Paths.get(p.getProperty("fileIp")));
-            URL url = new URL("http://" + ip + "/command");
+            URL url = new URL("http://" + ip.replace("\\", "") + "/command");
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("POST");
             con.setDoOutput(true);
