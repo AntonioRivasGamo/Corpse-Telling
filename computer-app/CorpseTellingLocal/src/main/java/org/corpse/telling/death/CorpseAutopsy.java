@@ -45,13 +45,15 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import java.awt.Font;
+import java.awt.Color;
+import javax.swing.SwingConstants;
 
 public class CorpseAutopsy {
 
 	private JFrame frame;
 	private Properties p = new Properties();
 	private JTextField ipServerWrite;
-	private JTextArea ipResponse;
+	private JLabel ipResponse;
 	private JTextField commandText;
 	private JTextField ipMongoWrite;
 	private static final String FILE = "config.properties";
@@ -129,19 +131,23 @@ public class CorpseAutopsy {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(120, 80, 44));
 		frame.setBounds(100, 100, 615, 380);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.LEFT);
+		tabbedPane.setBackground(new Color(0, 128, 0));
 		
 		
 		frame.getContentPane().add(tabbedPane, BorderLayout.CENTER);
 		
 		JPanel lenguage = new JPanel();
+		lenguage.setBackground(Color.GRAY);
 		tabbedPane.addTab(p.getProperty("lenguage"), null, lenguage, null);
 		lenguage.setLayout(null);
 		
 		JComboBox lenguages = new JComboBox();
+		lenguages.setBackground(Color.LIGHT_GRAY);
 		for (String lang : LANGUAGES) {
             lenguages.addItem(lang);
         }
@@ -174,6 +180,7 @@ public class CorpseAutopsy {
 		lenguage.add(lenguages);
 		
 		JPanel registries = new JPanel();
+		registries.setBackground(Color.GRAY);
 		tabbedPane.addTab(p.getProperty("registries"), null, registries, null);
 		registries.setLayout(null);
 		
@@ -183,16 +190,20 @@ public class CorpseAutopsy {
 		registries.add(page);
 		
 		JButton left = new JButton("<--");
+		left.setBackground(Color.LIGHT_GRAY);
 		left.setBounds(54, 273, 85, 28);
 		registries.add(left);
 		
 		JButton right = new JButton("-->");
+		right.setBackground(Color.LIGHT_GRAY);
 		right.setBounds(384, 273, 85, 28);
 		registries.add(right);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(54, 21, 415, 210);
 		JTextArea textArea = new JTextArea();
+		textArea.setForeground(Color.ORANGE);
+		textArea.setBackground(Color.BLACK);
         scrollPane.setViewportView(textArea);
         registries.add(scrollPane);
         
@@ -213,9 +224,11 @@ public class CorpseAutopsy {
         });
 		
 		JPanel players = new JPanel(new FlowLayout());
+		players.setBackground(Color.GRAY);
 		tabbedPane.addTab(p.getProperty("players"), null, players, null);
 		
 		JPanel commands = new JPanel();
+		commands.setBackground(Color.GRAY);
 		tabbedPane.addTab(p.getProperty("commands"), null, commands, null);
 		
 		tabbedPane.addChangeListener(new ChangeListener() {
@@ -247,10 +260,14 @@ public class CorpseAutopsy {
 			});
 		
 		commandText = new JTextField();
+		commandText.setForeground(Color.ORANGE);
+		commandText.setBackground(Color.BLACK);
 		commandText.setColumns(10);
 		
 		String[] com = String.valueOf(p.get("commandList")).split(",");
 		JComboBox<String> commandOptions = new JComboBox<String>(com);
+		commandOptions.setBackground(Color.LIGHT_GRAY);
+		commandOptions.setForeground(Color.BLACK);
 		commandOptions.addActionListener(new ActionListener() {
 			
 			@Override
@@ -290,6 +307,7 @@ public class CorpseAutopsy {
 		});
 		
 		JButton execute = new JButton(p.getProperty("execute"));
+		execute.setBackground(Color.LIGHT_GRAY);
 		execute.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				HttpPetition.sendCommand(commandText.getText());
@@ -333,6 +351,7 @@ public class CorpseAutopsy {
 		difficulty.setLayout(new GridLayout(1, 0, 0, 0));
 		
 		JButton peaceful = new JButton(p.getProperty("peaceful"));
+		peaceful.setBackground(Color.LIGHT_GRAY);
 		peaceful.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -342,6 +361,7 @@ public class CorpseAutopsy {
 		difficulty.add(peaceful);
 		
 		JButton easy = new JButton(p.getProperty("easy"));
+		easy.setBackground(Color.LIGHT_GRAY);
 		easy.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -351,6 +371,7 @@ public class CorpseAutopsy {
 		difficulty.add(easy);
 		
 		JButton normal = new JButton(p.getProperty("normal"));
+		normal.setBackground(Color.LIGHT_GRAY);
 		normal.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -360,6 +381,7 @@ public class CorpseAutopsy {
 		difficulty.add(normal);
 		
 		JButton hard = new JButton(p.getProperty("hard"));
+		hard.setBackground(Color.LIGHT_GRAY);
 		hard.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -373,6 +395,7 @@ public class CorpseAutopsy {
 		weather.setLayout(new GridLayout(1, 0, 0, 0));
 		
 		JButton clear = new JButton(p.getProperty("clear"));
+		clear.setBackground(Color.LIGHT_GRAY);
 		clear.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -382,6 +405,7 @@ public class CorpseAutopsy {
 		weather.add(clear);
 		
 		JButton rain = new JButton(p.getProperty("rain"));
+		rain.setBackground(Color.LIGHT_GRAY);
 		rain.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -391,6 +415,7 @@ public class CorpseAutopsy {
 		weather.add(rain);
 		
 		JButton storm = new JButton(p.getProperty("storm"));
+		storm.setBackground(Color.LIGHT_GRAY);
 		storm.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -404,6 +429,7 @@ public class CorpseAutopsy {
 		time.setLayout(new GridLayout(1, 0, 0, 0));
 		
 		JButton day = new JButton(p.getProperty("day"));
+		day.setBackground(Color.LIGHT_GRAY);
 		day.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -413,6 +439,7 @@ public class CorpseAutopsy {
 		time.add(day);
 		
 		JButton noon = new JButton(p.getProperty("noon"));
+		noon.setBackground(Color.LIGHT_GRAY);
 		noon.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -422,6 +449,7 @@ public class CorpseAutopsy {
 		time.add(noon);
 		
 		JButton night = new JButton(p.getProperty("night"));
+		night.setBackground(Color.LIGHT_GRAY);
 		night.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -431,6 +459,7 @@ public class CorpseAutopsy {
 		time.add(night);
 		
 		JButton midnight = new JButton(p.getProperty("midnight"));
+		midnight.setBackground(Color.LIGHT_GRAY);
 		midnight.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -440,14 +469,24 @@ public class CorpseAutopsy {
 		time.add(midnight);
 		
 		JPanel ipAsign = new JPanel();
+		ipAsign.setBackground(Color.GRAY);
+		ipAsign.setForeground(Color.GRAY);
 		tabbedPane.addTab(p.getProperty("ip"), null, ipAsign, null);
 		
 		ipServerWrite = new JTextField();
+		ipServerWrite.setHorizontalAlignment(SwingConstants.CENTER);
+		ipServerWrite.setForeground(Color.ORANGE);
+		ipServerWrite.setBackground(Color.BLACK);
 		ipServerWrite.setColumns(10);
 		
 		JButton ipServer = new JButton(p.getProperty("conectIpServer"));
+		ipServer.setBackground(Color.LIGHT_GRAY);
 		
-		ipResponse = new JTextArea();
+		ipResponse = new JLabel();
+		ipResponse.setHorizontalAlignment(SwingConstants.CENTER);
+		ipResponse.setOpaque(true);
+		ipResponse.setForeground(Color.ORANGE);
+		ipResponse.setBackground(Color.BLACK);
 		
 		ipServer.addActionListener(new ActionListener() {
 			@Override
@@ -460,6 +499,9 @@ public class CorpseAutopsy {
 		});
 		
 		ipMongoWrite = new JTextField();
+		ipMongoWrite.setHorizontalAlignment(SwingConstants.CENTER);
+		ipMongoWrite.setBackground(Color.BLACK);
+		ipMongoWrite.setForeground(Color.ORANGE);
 		ipMongoWrite.setColumns(10);
 		SpringLayout sl_ipAsign = new SpringLayout();
 		sl_ipAsign.putConstraint(SpringLayout.WEST, ipServer, 31, SpringLayout.WEST, ipAsign);
@@ -484,6 +526,7 @@ public class CorpseAutopsy {
 		ipAsign.add(ipServer);
 		
 		JButton ipMongo = new JButton(p.getProperty("conectIpMongo"));
+		ipMongo.setBackground(Color.LIGHT_GRAY);
 		sl_ipAsign.putConstraint(SpringLayout.WEST, ipMongo, 264, SpringLayout.WEST, ipAsign);
 		sl_ipAsign.putConstraint(SpringLayout.EAST, ipServer, -34, SpringLayout.WEST, ipMongo);
 		sl_ipAsign.putConstraint(SpringLayout.NORTH, ipMongo, 42, SpringLayout.SOUTH, ipMongoWrite);
@@ -507,7 +550,7 @@ public class CorpseAutopsy {
 				        }
 
 				        if (!dbExists) {
-				            throw new IOException("Database does not exist");
+				            throw new IOException(p.getProperty("databaseNot"));
 				        }
 
 				        boolean collectionExists = false;
@@ -520,22 +563,22 @@ public class CorpseAutopsy {
 				        }
 
 				        if (!collectionExists) {
-				            throw new IOException("Collection does not exist");
+				            throw new IOException(p.getProperty("collectionNot"));
 				        }
 				        
 				        dataProperties.setProperty("mongo", ip + " " + args[3] + " " + args[4]);
-				        ipResponse.setText("Connected to MongoDB");
+				        ipResponse.setText(p.getProperty("connected"));
 				        ipMongoWrite.setText("");
 				        save();
 				    } catch (MongoSocketException e1) {
-				        throw new MongoSocketException("Error connecting to " + args[2] + ": " + e1.getMessage(), null, e1.getCause());
+				        throw new MongoSocketException(p.getProperty("errorConecting") + args[2] + ": " + e1.getMessage(), null, e1.getCause());
 				    }
 				} catch (UnknownHostException e1) {
-					ipResponse.setText("ERROR: Url is wrong");
+					ipResponse.setText(p.getProperty("wrongUrl"));
 				} catch (IOException e2) {
-					ipResponse.setText("ERROR: " + e2.getMessage());
+					ipResponse.setText(p.getProperty("error") + e2.getMessage());
 				}catch (MongoSecurityException e3) {
-					ipResponse.setText("ERROR: User or password is wrong");
+					ipResponse.setText(p.getProperty("wrongCredential"));
 				} catch (Exception e4) {
 					ipResponse.setText("ERROR: " + e4.getClass());
 				}
@@ -545,6 +588,17 @@ public class CorpseAutopsy {
 			}
 		});
 		ipAsign.add(ipMongo);
+		
+		JButton question = new JButton("?");
+		question.setBackground(Color.CYAN);
+		sl_ipAsign.putConstraint(SpringLayout.NORTH, question, 28, SpringLayout.NORTH, ipAsign);
+		sl_ipAsign.putConstraint(SpringLayout.EAST, question, 0, SpringLayout.EAST, ipResponse);
+		question.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+		        JOptionPane.showMessageDialog(ipAsign, p.get("ipInfo"), null, JOptionPane.INFORMATION_MESSAGE);
+			}
+		});
+		ipAsign.add(question);
 		
 		
 	}
