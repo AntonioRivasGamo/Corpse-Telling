@@ -37,6 +37,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.SpringLayout;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.ImageIcon;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -134,6 +135,8 @@ public class CorpseAutopsy {
 		frame.getContentPane().setBackground(new Color(120, 80, 44));
 		frame.setBounds(100, 100, 615, 380);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource("Servidor.png"));
+	    frame.setIconImage(icon.getImage());
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.LEFT);
 		tabbedPane.setBackground(new Color(0, 128, 0));
