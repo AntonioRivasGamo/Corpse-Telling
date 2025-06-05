@@ -253,7 +253,7 @@ public class CorpseAutopsy {
 				    break;
 				case 2:
 					players.removeAll();
-					List<String> playerNames = HttpPetition.getPlayers();
+					List<String> playerNames = HttpPetition.getPlayers(dataProperties);
 					playerNames.forEach(p -> players.add(playerButton(p)));
 					players.revalidate();
 	                players.repaint();
@@ -313,7 +313,7 @@ public class CorpseAutopsy {
 		execute.setBackground(Color.LIGHT_GRAY);
 		execute.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				HttpPetition.sendCommand(commandText.getText());
+				HttpPetition.sendCommand(commandText.getText(),dataProperties);
 				commandText.setText(null);
 			}
 		});
@@ -358,7 +358,7 @@ public class CorpseAutopsy {
 		peaceful.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				HttpPetition.sendCommand("peaceful");
+				HttpPetition.sendCommand("peaceful",dataProperties);
 			}
 		});
 		difficulty.add(peaceful);
@@ -368,7 +368,7 @@ public class CorpseAutopsy {
 		easy.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				HttpPetition.sendCommand("easy");
+				HttpPetition.sendCommand("easy",dataProperties);
 			}
 		});
 		difficulty.add(easy);
@@ -378,7 +378,7 @@ public class CorpseAutopsy {
 		normal.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				HttpPetition.sendCommand("normal");
+				HttpPetition.sendCommand("normal",dataProperties);
 			}
 		});
 		difficulty.add(normal);
@@ -388,7 +388,7 @@ public class CorpseAutopsy {
 		hard.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				HttpPetition.sendCommand("hard");
+				HttpPetition.sendCommand("hard",dataProperties);
 			}
 		});
 		difficulty.add(hard);
@@ -402,7 +402,7 @@ public class CorpseAutopsy {
 		clear.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				HttpPetition.sendCommand("clear");
+				HttpPetition.sendCommand("clear",dataProperties);
 			}
 		});
 		weather.add(clear);
@@ -412,7 +412,7 @@ public class CorpseAutopsy {
 		rain.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				HttpPetition.sendCommand("rain");
+				HttpPetition.sendCommand("rain",dataProperties);
 			}
 		});
 		weather.add(rain);
@@ -422,7 +422,7 @@ public class CorpseAutopsy {
 		storm.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				HttpPetition.sendCommand("storm");
+				HttpPetition.sendCommand("storm",dataProperties);
 			}
 		});
 		weather.add(storm);
@@ -436,7 +436,7 @@ public class CorpseAutopsy {
 		day.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				HttpPetition.sendCommand("day");
+				HttpPetition.sendCommand("day",dataProperties);
 			}
 		});
 		time.add(day);
@@ -446,7 +446,7 @@ public class CorpseAutopsy {
 		noon.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				HttpPetition.sendCommand("noon");
+				HttpPetition.sendCommand("noon",dataProperties);
 			}
 		});
 		time.add(noon);
@@ -456,7 +456,7 @@ public class CorpseAutopsy {
 		night.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				HttpPetition.sendCommand("night");
+				HttpPetition.sendCommand("night",dataProperties);
 			}
 		});
 		time.add(night);
@@ -466,7 +466,7 @@ public class CorpseAutopsy {
 		midnight.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				HttpPetition.sendCommand("midnight");
+				HttpPetition.sendCommand("midnight",dataProperties);
 			}
 		});
 		time.add(midnight);
@@ -494,8 +494,7 @@ public class CorpseAutopsy {
 		ipServer.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ipResponse.setText(HttpPetition.ping(ipServerWrite.getText()+":4567"));
-				dataProperties.setProperty("ip", ipServerWrite.getText()+":4567");
+				ipResponse.setText(HttpPetition.ping(ipServerWrite.getText()+":4567",dataProperties));
 				ipServerWrite.setText("");
 				save();
 			}
@@ -583,7 +582,7 @@ public class CorpseAutopsy {
 				}catch (MongoSecurityException e3) {
 					ipResponse.setText(p.getProperty("wrongCredential"));
 				} catch (Exception e4) {
-					ipResponse.setText("ERROR: " + e4.getClass());
+					ipResponse.setText("ERROR: " + e4.getClass() + e4.getMessage());
 				}
 			    
 
@@ -631,9 +630,9 @@ public class CorpseAutopsy {
 			        );
 
 			        switch (seleccion) {
-			            case 0 -> HttpPetition.sendCommand("ban " + w);
-			            case 1 -> HttpPetition.sendCommand("kick " + w);
-			            case 2 -> HttpPetition.sendCommand("kill " + w);
+			            case 0 -> HttpPetition.sendCommand("ban " + w,dataProperties);
+			            case 1 -> HttpPetition.sendCommand("kick " + w,dataProperties);
+			            case 2 -> HttpPetition.sendCommand("kill " + w,dataProperties);
 			            default -> {}
 			        }
 			}

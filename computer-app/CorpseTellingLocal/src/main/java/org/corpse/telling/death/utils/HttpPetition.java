@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -16,16 +17,16 @@ import java.nio.file.StandardOpenOption;
 import java.util.List;
 import java.util.Properties;
 
+import org.corpse.telling.death.CorpseAutopsy;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 public class HttpPetition {
-	public static List<String> getPlayers() {
+	public static List<String> getPlayers(Properties p) {
         try {
-        	Properties p = new Properties();
-        	p.load(new FileInputStream(new File("config/conf.properties")));
-        	String ip = new String(Files.readAllBytes(Paths.get(p.getProperty("fileIp"))), StandardCharsets.UTF_8);
-            URL url = new URL("http://" + ip + "/players");
+        	String ip = p.getProperty("ip");
+            URL url = new URL("http://" + ip.replace("\\", "") + "/players");
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
 
@@ -48,11 +49,9 @@ public class HttpPetition {
         }
     }
 	
-	public static String ping(String ip) {
+	public static String ping(String ip, Properties p) {
 		HttpURLConnection con = null;
         try {
-        	Properties p = new Properties();
-        	p.load(new FileInputStream(new File("config/conf.properties")));
             URL url = new URL("http://" + ip + "/ping");
             con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
@@ -65,25 +64,20 @@ public class HttpPetition {
                 answer.append(line);
             }
             in.close();
-            Files.write(
-            	    Paths.get(p.getProperty("fileIp")),
-            	    ip.getBytes(StandardCharsets.UTF_8),
-            	    StandardOpenOption.CREATE,
-            	    StandardOpenOption.TRUNCATE_EXISTING
-            	);
+            p.setProperty("ip", ip);
             return answer.toString();
 
         } catch (IOException e) {
-            return "ERROR: " + "http://" + ip + "/ping";
+            return "ERROR: " + "http://" + ip + "/ping" + e.getMessage();
         }
     }
 	
-	public static String sendCommand(String command) {
+	public static String sendCommand(String command, Properties p) {
         try {
-        	Properties p = new Properties();
-        	p.load(new FileInputStream(new File("config/conf.properties")));
-        	String ip = Files.readString(Paths.get(p.getProperty("fileIp")));
+        	String ip = p.getProperty("ip");
+        	System.out.println(ip);
             URL url = new URL("http://" + ip.replace("\\", "") + "/command");
+            System.out.println(url);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("POST");
             con.setDoOutput(true);
